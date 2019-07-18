@@ -2,3 +2,7 @@
 OpenShift S2I builder image for Angular apps using Angular CLI and NGINX.
 
 # dockerAngular8
+
+
+# OpenShift
+oc create -f angular-s2i-nginx.json -n openshift
