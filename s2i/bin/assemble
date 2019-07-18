@@ -1,0 +1,32 @@
+#!/bin/sh -e
+
+pushd /tmp/src
+
+if [ "$(ls /tmp/artifacts/ 2>/dev/null)" ]; then
+    echo "---> Restoring build artifacts (node_modules)"
+    mv /tmp/artifacts/* .
+fi
+
+echo "---> Installing NPM Dependencies (with dev)"
+npm install
+npm install --only=dev
+
+echo "---> Building Angular CLI Application"
+npm run build
+
+popd
+
+if [ -d "/tmp/src/openshift/conf" ]; then
+    echo "---> Overwriting default.conf and nginx.conf"
+    cp -Rf /tmp/src/openshift/conf/nginx.conf /etc/nginx/nginx.conf
+    cp -Rf /tmp/src/openshift/conf/default.conf /etc/nginx/default.d/default.conf
+    cp -Rf /tmp/src/openshift/conf/module.conf /etc/nginx/conf.d/module.conf
+fi
+
+
+echo "---> Installing application to web container"
+cp -Rf /tmp/src/dist/. /usr/share/nginx/html/
+
+
+#echo "---> Removing application source"
+rm -rf /tmp/src
