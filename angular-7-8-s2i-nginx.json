@@ -31,7 +31,7 @@
         "tag": "1",
         "items": [
           {
-    	    "dockerImageReference": "syslockcl/angular7_8:latest",
+    	    "dockerImageReference": "syslockcl/angular7_8:latest"
           }
         ]
       }
