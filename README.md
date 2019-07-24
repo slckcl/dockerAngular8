@@ -1,4 +1,4 @@
-# S2I Builder for Angular Cli Apps <= 8
+# S2I Builder for Angular Cli Apps 7/8
 OpenShift S2I builder image for Angular apps using Angular CLI and NGINX.
 
 # dockerAngular8
