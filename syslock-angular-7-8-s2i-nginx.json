@@ -2,7 +2,7 @@
   "kind": "ImageStream",
   "apiVersion": "v1",
   "metadata": {
-    "name": "s2i-angular-nginx-7-8",
+    "name": "syslock-s2i-angular-nginx-7-8",
     "creationTimestamp": null
   },
   "spec": {
