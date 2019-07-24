@@ -1,6 +1,6 @@
 FROM openshift/base-centos7
 
-# This image provides a S2I builder image for Angular applications running inside an NGINX web container.
+# This image provides a S2I Plataforma para construir y ejecutar aplicaciones Angular7/8 en NGINX en contenedores
 # Fork from https://github.com/mhjmaas/s2i-angular-nginx
 MAINTAINER Jorge Moya A. <jorge.moya.araneda@gmail.com>
 
